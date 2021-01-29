@@ -23,15 +23,19 @@ programa
 		{
 			para (inteiro c=0;c<4;c++)
 			{
-				escreva(M1 [l][c])
+				escreva(" [ ",M1 [l][c]," ] ")
 			}
+			escreva("\n")
 		}
+		
+		escreva("\n")
 		para (inteiro l=0;l<4;l++)
 		{
 			para (inteiro c=0;c<4;c++)
 			{
-				escreva(M2 [l][c])
+				escreva(" [ ",M2 [l][c]," ] ")
 			}
+			escreva("\n")
 		}
 	}
 }
@@ -40,7 +44,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 847; 
+ * @POSICAO-CURSOR = 922; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

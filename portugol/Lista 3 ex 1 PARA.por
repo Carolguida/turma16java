@@ -10,7 +10,7 @@ programa
 		real totalSalarios = 0.0
 		inteiro totalFilhos = 0
 		real contador = 0.0
-		const inteiro HABITANTES = 2
+		const inteiro HABITANTES = 20
 		
 		//entradas e processamentos
 		para (inteiro giro=1;giro<=HABITANTES;giro++)
@@ -54,7 +54,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1175; 
+ * @POSICAO-CURSOR = 277; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

@@ -7,18 +7,19 @@ public class Ecommerce {
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
 		DecimalFormat df = new DecimalFormat("#.00");
-		String estoqueProdutos[] = { "Tenis1", "Tenis2", "Tenis3", "Tenis4", "Tenis5", "Tenis6", "Tenis7", "Tenis8",
-				"Tenis9", "Tenis10" };
+		String estoqueProdutos[] = { "TenisX", "Force2", "X-treme3", "AirX4", "Bubble5", "Trator6", "Star7", "Max8",
+				"SuperMax9", "Classic10" };
 		int estoqueCodigo[] = new int[10];
-		double estoquePreco[] = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
+		double estoquePreco[] = { 50.0, 59.9, 64.9, 74, 45.9, 75.9, 80.0, 79.0, 69.9, 90.0 };
 		int estoqueQuantidade[] = new int[10];
 		String carrinho[] = new String[10];
 		int verificadorEstoque = 0;
 		double precoTotal = 0.0;
 		double subTotal = 0.0;
 		String nome;
-		String sexo;
+		String genero = null;
 		String opcaoPagamento;
+		String sexo;
 		int codigoDigitado;
 		int quantidade = 0;
 		char opcao = 'S';
@@ -28,12 +29,27 @@ public class Ecommerce {
 			estoqueCodigo[x] = x + 1;
 		}
 		do {
-			System.out.print("Digite seu nome: ");
+
+			System.out.println("\t\t   LOJA SPORT\n");
+			System.out.println("\t~~~~~ Qualidade para seus pés ~~~~~\n");
+			System.out.print("\n###REALIZANDO CADASTRO DO USUÁRIO###");
+			System.out.print("\nDigite seu nome: ");
 			nome = leia.next();
-			System.out.print("Digite seu sexo (M/F/X): ");
+			System.out.print("Digite seu sexo (M - Masculino /F - Feminino /X - outros): ");
 			sexo = leia.next().toUpperCase();
 
-			System.out.println("###EXIBINDO OS PRODUTOS###");
+			if (sexo.equals("F")) {
+				genero = "Sra.";
+			} else if (sexo.equals("M")) {
+				genero = "Sr.";
+			} else if (sexo.equals("X")) {
+				genero = "Srx.";
+			}
+			// sexo.equals("F")= comparação de Strings.
+
+			System.out.printf("BEM VINDO A LOJA SPORT, %s %s.", genero, nome);
+
+			System.out.println("\n###EXIBINDO OS PRODUTOS###");
 			System.out.println("\nCÓDIGO \t\t\t PRODUTO \t\t\t PREÇO \t\t\t ESTOQUE");
 
 			for (int x = 0; x < 10; x++) {
@@ -44,26 +60,32 @@ public class Ecommerce {
 			do {
 				System.out.print("DIGITE O CÓDIGO DO PRODUTO: ");
 				codigoDigitado = leia.nextInt();
-				
-				
 				for (int x = 0; x < 10; x++) {
 
 					if (codigoDigitado == estoqueCodigo[x]) {
 
-						System.out.println("DIGITE A QUANTIDADE DO PRODUTO: ");
+						System.out.print("DIGITE A QUANTIDADE DO PRODUTO " + estoqueProdutos[x] + ": ");
 						quantidade = leia.nextInt();
 
-						while (quantidade > estoqueQuantidade[x] || quantidade < 1) {
-							System.out.println("Quantidade inválida! Estoque: " + estoqueQuantidade[x] + "\n");
-							System.out.println("Informe uma quantidade válida: ");
-							quantidade = leia.nextInt();
+						if (quantidade > estoqueQuantidade[x]) {
+							if (estoqueQuantidade[x] <= 0) {
+								System.out.print("Quantidade inválida! Estoque: " + estoqueQuantidade[x]
+										+ ". Insira um novo produto\n");
+							} else {
+
+								System.out.println("Quantidade inválida! Estoque: " + estoqueQuantidade[x] + "\n");
+								System.out.println("Informe uma quantidade válida: ");
+								quantidade = leia.nextInt();
+							}
+
 						}
+
 						System.out.print("DESEJA CONTINUAR COMPRANDO (S/N)? ");
 						opcao = leia.next().toUpperCase().charAt(0);
 						subTotal = estoquePreco[x] * quantidade;
 						carrinho[x] = estoqueCodigo[x] + " \t\t\t " + estoqueProdutos[x] + " \t\t\t " + estoquePreco[x]
 								+ " \t\t\t " + quantidade + " \t\t\t\t " + subTotal;
-				
+
 						estoqueQuantidade[x] -= quantidade;
 						precoTotal += subTotal;
 
@@ -72,8 +94,8 @@ public class Ecommerce {
 				}
 			} while (opcao == 'S');
 
-			System.out.println("### EXIBINDO NOTA FISCAL ###");
-			
+			System.out.println("### EXIBINDO CARRINHO ###");
+
 			System.out.println("\nCÓDIGO \t\t\t PRODUTO \t\t\t PREÇO \t\t\t QUANTIDADE \t\t\t SUBTOTAL");
 			for (int x = 0; x < 10; x++) {
 				if (carrinho[x] != null) {
@@ -81,8 +103,7 @@ public class Ecommerce {
 				}
 
 			}
-			System.out.print((sexo.equals("F")) ? "Cliente Sra. " + nome : "" );
-			System.out.print((sexo.equals("M")) ? "Cliente Sr. " + nome : "Cliente Srx. " + nome);
+
 			System.out.println("\n### OPÇÕES DE PAGAMENTO ###");
 			System.out.print("\n1 - À VISTA -> 10% DESCONTO \r\n" + "2 - À VISTA - CRÉDITO -> SEM DESCONTO\r\n"
 					+ "3- 2X -> ACRÉSCIMO DE 10% \r\n" + "4 - 3X -> ACRÉSCIMO DE 15% \r\n");
@@ -117,7 +138,6 @@ public class Ecommerce {
 			System.out.printf("\nVALOR TOTAL DA NOTA: R$ %.2f - %s ", precoTotal, opcaoPagamento);
 			System.out.print("------------------------------------------\n");
 			System.out.print("CNPJ: XX.XXX.XXX/XXXX - XX");
-			
 
 			for (int x = 0; x < 10; x++) {
 				carrinho[x] = "";
@@ -135,9 +155,8 @@ public class Ecommerce {
 					}
 				}
 			}
-		}while (true);
-		
-		
+		} while (true);
+
 	}
 
 }

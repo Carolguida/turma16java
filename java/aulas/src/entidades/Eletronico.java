@@ -1,4 +1,4 @@
-package encapsulamento;
+package entidades;
 
 public class Eletronico {
 

@@ -1,7 +1,5 @@
 package entidades;
 
-import encapsulamento.Eletronico;
-
 public class Celular extends Eletronico {
 
 	private String resolucao;

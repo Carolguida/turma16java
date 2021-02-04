@@ -1,4 +1,4 @@
-package exemplos;
+package aulasexercícios;
 
 import entidades.Produto;
 

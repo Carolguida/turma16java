@@ -1,7 +1,5 @@
 package entidades;
 
-import encapsulamento.Eletronico;
-
 public class Ventilador extends Eletronico {// herança eletronico (genérico que atende a todos os produtos do tipo
 											// eletrônico)
 

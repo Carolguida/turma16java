@@ -1,5 +1,7 @@
-package aulasexercícios;
+package cadfun;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -7,10 +9,13 @@ public class CadFun {
 
 	public static void main(String[] args) {
 
-		//Locale aLocale = Locale.forLanguageTag("en-US");
+		Locale.setDefault(Locale.US);
 		Scanner leia = new Scanner(System.in);
-		char opcao;
+		List<Empregado> lista = new ArrayList<>(); 
+		// List - tratado como interface - não pode implementar um objeto do
+		// tipo List (implementou um ArrayList.
 
+		
 		System.out.print("Digite sua matrícula: ");
 		int matricula = leia.nextInt();
 		leia.nextLine();// limpeza bufer teclado
@@ -20,12 +25,11 @@ public class CadFun {
 		int horas = leia.nextInt();
 		System.out.print("Digite o valor por hora (valor/hora): ");
 		double valorHora = leia.nextDouble();
-		System.out.print("Você é terceiro? Digite S-Sim ou N-não ");
-		opcao = leia.next().toUpperCase().charAt(0);
-
+		System.out.print("Você é terceiro? Digite S-Sim ou N-não: ");
+		char opcao = leia.next().toUpperCase().charAt(0);
 		if (opcao == 'S') {
 
-			System.out.print("Digite o acréscimo:");
+			System.out.print("Digite o acréscimo em porcentagem (%): ");
 			double acrescimo = leia.nextDouble();
 
 			Terceiros func1 = new Terceiros(nome, matricula, horas, valorHora, acrescimo);

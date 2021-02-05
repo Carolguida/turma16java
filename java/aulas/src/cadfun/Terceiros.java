@@ -1,6 +1,6 @@
-package aulasexercícios;
+package cadfun;
 
-public class Terceiros extends Empregado {
+public final class Terceiros extends Empregado { //torna essa classe final - ninguém mais pode extender a classe terceiros
 
 	private double acrescimo;
 

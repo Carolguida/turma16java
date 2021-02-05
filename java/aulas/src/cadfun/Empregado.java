@@ -1,4 +1,4 @@
-package aulasexercícios;
+package cadfun;
 
 public class Empregado {
 	private String nome;

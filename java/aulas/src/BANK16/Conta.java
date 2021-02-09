@@ -14,12 +14,6 @@ public class Conta {
 	}
 
 	public void debitar(double valor) {
-		/*
-		 * if(saldo<=0) {
-		 * 
-		 * System.out.println("Valor informado nao corresponde ao solicitado"); } else {
-		 * this.saldo -= valor; }
-		 */
 
 		if (saldo <= 0) {
 			System.out.println("Saldo zero!Faça um crédito primeiramente");

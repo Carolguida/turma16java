@@ -30,12 +30,13 @@ public class Pessoa {
 		String mensagem;
 		if (idade < 18) {
 			mensagem = "Pessoa maior de 18 anos";
-			return mensagem;
+
 		} else {
 			mensagem = "Pessoa maior que 18 anos";
-			return mensagem;
+
 		}
+		return mensagem;
+
 	}
-	
 
 }

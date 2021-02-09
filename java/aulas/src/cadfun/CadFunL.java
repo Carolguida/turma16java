@@ -20,7 +20,7 @@ public class CadFunL {
 			char opcao = leia.next().toUpperCase().charAt(0);
 			System.out.print("Digite sua matrícula: ");
 			int matricula = leia.nextInt();
-			leia.nextLine();// limpeza bufer teclado
+			leia.nextLine();// limpeza buffer teclado
 			System.out.print("Insira seu nome: ");
 			String nome = leia.nextLine();
 			System.out.print("Digite as horas trabalhadas: ");

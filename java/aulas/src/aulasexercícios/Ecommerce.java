@@ -7,8 +7,8 @@ public class Ecommerce {
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
 		DecimalFormat df = new DecimalFormat("#.00");
-		String estoqueProdutos[] = { "TenisX", "Force2", "X-treme3", "AirX4", "Bubble5", "Trator6", "Star7", "Max8",
-				"SuperMax9", "Classic10" };
+		String estoqueProdutos[] = {"TenisX", "Force2", "X-treme3", "AirX4", "Bubble5", "Trator6", "Star7", "Max8",
+				"SuperMax9", "Classic10"};
 		int estoqueCodigo[] = new int[10];
 		double estoquePreco[] = { 50.0, 59.9, 64.9, 74, 45.9, 75.9, 80.0, 79.0, 69.9, 90.0 };
 		int estoqueQuantidade[] = new int[10];
@@ -73,7 +73,7 @@ public class Ecommerce {
 										+ ". Insira um novo produto\n");
 							} else {
 
-								System.out.println("Quantidade inválida! Estoque: " + estoqueQuantidade[x] + "\n");
+								System.out.println("Quantidade acima do estoque: " + estoqueQuantidade[x] + "\n");
 								System.out.println("Informe uma quantidade válida: ");
 								quantidade = leia.nextInt();
 							}

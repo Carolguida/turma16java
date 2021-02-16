@@ -45,5 +45,8 @@ select * from tb_produtos where preco between 3 and 60;
 select * from tb_produtos where nome like "%C%";
 select  nome, estoque,tamanho,preco, tb_categoria.tipo, tb_categoria.ativo from tb_produtos inner join tb_categoria on 
 tb_categoria.id = tb_produtos.categoria_id;
-select * from tb_produtos where categoria_id = 3;
+-- select * from tb_produtos where categoria_id = 3;
+-- select * from tb_produtos inner join tb_categoria on tb_categoria.id = tb_produtos.id;
+select tb_categoria.tipo, tb_produtos.nome from tb_categoria inner join tb_produtos on tb_categoria.id = tb_produtos.categoria_id
+where tb_produtos.categoria_id = 3;	
 
